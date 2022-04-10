@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Animation</title>
+
+    <style>
+        body{
+            background-color: #000;
+        }
+        .cards{
+            perspective: 500px;
+            display: flex;
+            justify-content: center;
+            margin-top: 6rem;
+        }
+        .card{
+            width: 200px;
+            height: 250px;
+            background: url('./city.jpg') center no-repeat;
+            background-size: cover;
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: 4px;
+            position: relative;
+            transform-style: perspective-3d ;
+            will-change: transform;
+            transition: transform .5s;
+        }
+        .card:hover{
+            transform: translateZ(10px) rotateX(20deg) rotateY(30deg);
+        }
+        .card-title {
+            color: #000;
+            position: absolute;
+            background-color: #fff;
+            border-radius: 30px;
+            padding: 5px;
+            font-size: 12px;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            transition: transform .5s;
+        }
+        .card:hover .card-title{
+            transform: translateZ(50px);
+        }
+    </style>
+
+</head>
+<body>
+    
+    <section class="cards">
+        <figure class="card">
+            <figcaption class="card-title">New York</figcaption>
+        </figure>
+    </section>
+
+</body>
+</html>
